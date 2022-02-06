@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { bookFetch } from './redux/actions/books'
+import Books from './components/Books'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch()
+  const books = useSelector((state) => state.books)
+  const loading = useSelector((state) => state.loading)
+
+  useEffect(() => {
+    dispatch(bookFetch())
+  }, [dispatch])
+
+  return <>{loading ? 'Carregando...' : <Books books={books} />}</>
 }
 
-export default App;
+export default App
