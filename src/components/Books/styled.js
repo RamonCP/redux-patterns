@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.section``
+export const Wrapper = styled.section`
+  margin-top: 63px;
+`
 
 export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 80px 44px;
+  gap: 40px;
   padding: 30px 0;
 `
 
@@ -24,29 +26,5 @@ export const Book = styled.div`
   h3 {
     font-size: 1.6rem;
     margin: 2rem 0;
-  }
-`
-
-export const Button = styled.button`
-  background-color: #ff6c00;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%), inset 0 -2px 0 0 rgb(0 0 0 / 20%);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  width: 60%;
-  cursor: pointer;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  height: 40px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  -webkit-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-
-  &:hover {
-    background-color: #e66100;
-    color: #fff;
-    outline: none;
   }
 `

@@ -4,6 +4,10 @@ export const Wrapper = styled.nav`
   background: #6a1b60;
   color: #fff;
   padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 `
 
 export const Content = styled.div`
