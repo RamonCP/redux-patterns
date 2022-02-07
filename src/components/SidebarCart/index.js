@@ -13,6 +13,7 @@ const SidebarCart = () => {
       <S.IconCart>
         {cart.length > 0 && <span className='count'>{cart.length}</span>}
         <FaShoppingCart />
+        <span className='label'>Cart</span>
         <S.Cart>
           {cart.length > 0 ? (
             <>

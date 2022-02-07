@@ -64,6 +64,11 @@ export const IconCart = styled.div`
     font-size: 2.5rem;
   }
 
+  .label {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+  }
+
   .count {
     background: #ff6c00;
     color: #fff;
@@ -74,8 +79,8 @@ export const IconCart = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -7px;
-    right: -13px;
+    top: -9px;
+    left: 17px;
   }
 
   &:hover {
