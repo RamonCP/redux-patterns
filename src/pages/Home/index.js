@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { bookFetch } from '../../redux/actions/books'
 import Books from '../../components/Books'
+import Spinner from '../../components/Spinner'
 import Navbar from '../../components/Navbar'
 
 function Home() {
@@ -17,7 +18,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      {loading ? 'Carregando...' : <Books books={books} />}
+      {loading ? <Spinner /> : <Books books={books} />}
     </>
   )
 }
