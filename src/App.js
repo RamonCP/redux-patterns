@@ -1,5 +1,5 @@
 import { GlobalStyle } from './styles/global'
-import Notify from './components/Notify'
+import Notify from './components/Notify/Notify'
 import Home from './pages/Home'
 
 function App() {

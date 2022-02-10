@@ -1,5 +1,5 @@
 import Container from '../Container'
-import SidebarCart from '../SidebarCart'
+import Cart from '../Cart/Cart'
 import * as S from './styled'
 
 const Navbar = () => {
@@ -8,7 +8,7 @@ const Navbar = () => {
       <Container>
         <S.Content>
           <h3>Books</h3>
-          <SidebarCart />
+          <Cart />
         </S.Content>
       </Container>
     </S.Wrapper>

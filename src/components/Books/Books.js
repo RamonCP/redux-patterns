@@ -1,12 +1,13 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { AddBook } from '../../redux/actions/cart'
 import Container from '../Container'
 import { Button } from '../Button'
-import * as S from './styled'
+import * as S from './Books.styled'
 
-const Books = ({ books }) => {
+const Books = () => {
   const dispatch = useDispatch()
+  const books = useSelector((state) => state.books)
 
   const AddToCart = (book) => {
     dispatch(AddBook(book))
@@ -16,8 +17,8 @@ const Books = ({ books }) => {
     <S.Wrapper>
       <Container>
         <S.Content>
-          {books.map((book) => (
-            <S.Book key={book.id}>
+          {books.map((book, key) => (
+            <S.Book key={key}>
               <img
                 src={book.volumeInfo.imageLinks?.thumbnail}
                 alt={book.volumeInfo.title}

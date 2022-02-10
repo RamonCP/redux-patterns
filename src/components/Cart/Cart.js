@@ -3,9 +3,9 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 import Overlay from '../Overlay'
 import { Button } from '../Button'
-import * as S from './styled'
+import * as S from './Cart.styled'
 
-const SidebarCart = () => {
+const Cart = () => {
   const cart = useSelector((state) => state.cart)
 
   return (
@@ -40,4 +40,4 @@ const SidebarCart = () => {
   )
 }
 
-export default SidebarCart
+export default Cart

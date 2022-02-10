@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 
-import * as S from './styled'
+import * as S from './Notify.styled'
 
 const Notify = () => {
   const notify = useSelector((state) => state.notify)
