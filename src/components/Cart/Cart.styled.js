@@ -23,34 +23,6 @@ export const Cart = styled.div`
     color: #212121;
     font-size: 1.6rem;
   }
-
-  ul {
-    list-style: none;
-    max-height: 250px;
-    overflow: auto;
-    margin-bottom: 10px;
-
-    li {
-      color: #212121;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-
-      &:not(:last-child) {
-        border-bottom: 1px solid #efefef;
-      }
-
-      img {
-        width: 60px;
-        height: 80px;
-      }
-
-      p {
-        font-size: 1.3rem;
-      }
-    }
-  }
 `
 
 export const IconCart = styled.div`
@@ -69,7 +41,7 @@ export const IconCart = styled.div`
     margin-left: 1rem;
   }
 
-  .count {
+  .amount {
     background: #ff6c00;
     color: #fff;
     border-radius: 50%;
