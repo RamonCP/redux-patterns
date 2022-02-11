@@ -1,6 +1,6 @@
-import Container from '../Container'
+import Container from '../Container/Container'
 import Cart from '../Cart/Cart'
-import * as S from './styled'
+import * as S from './Navbar.styled'
 
 const Navbar = () => {
   return (

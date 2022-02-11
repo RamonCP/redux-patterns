@@ -14,7 +14,6 @@ export const Button = styled.button`
     text-align: center;
     text-transform: uppercase;
     touch-action: manipulation;
-    -webkit-user-select: none;
     user-select: none;
     white-space: nowrap;
 

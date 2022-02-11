@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { bookFetch } from '../../redux/actions/books'
 import Books from '../../components/Books/Books'
-import Spinner from '../../components/Spinner'
-import Navbar from '../../components/Navbar'
+import Spinner from '../../components/Spinner/Spinner'
+import Navbar from '../../components/Navbar/Navbar'
 
 function Home() {
   const dispatch = useDispatch()

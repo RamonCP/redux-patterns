@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import { AddBook } from '../../redux/actions/cart'
-import Container from '../Container'
-import { Button } from '../Button'
+import Container from '../Container/Container'
+import { Button } from '../Button/Button'
 import * as S from './Books.styled'
 
 const Books = () => {

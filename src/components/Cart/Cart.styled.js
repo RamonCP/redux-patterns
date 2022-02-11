@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Overlay from '../Overlay'
+import Overlay from '../Overlay/Overlay'
 
 export const Wrapper = styled.div`
   position: relative;

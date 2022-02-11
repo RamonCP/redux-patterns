@@ -2,8 +2,8 @@ import * as S from './CartList.styled'
 
 const CartList = ({ cart }) => (
   <S.CartList>
-    {cart.map((item) => (
-      <li key={item.id}>
+    {cart.map((item, idx) => (
+      <li key={idx}>
         <img
           src={item.volumeInfo.imageLinks?.thumbnail}
           alt={item.volumeInfo.title}
