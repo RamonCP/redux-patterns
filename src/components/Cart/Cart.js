@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { FaShoppingCart } from 'react-icons/fa'
 
 import Overlay from '../Overlay/Overlay'
-import { Button } from '../Button/Button'
+import Button from '../Button/Button'
 import * as S from './Cart.styled'
 import CartList from '../CartList/CartList'
 

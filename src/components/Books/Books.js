@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { AddBook } from '../../redux/actions/cart'
 import Container from '../Container/Container'
-import { Button } from '../Button/Button'
+import Button from '../Button/Button'
 import * as S from './Books.styled'
 
 const Books = () => {
@@ -14,7 +14,7 @@ const Books = () => {
   }
 
   return (
-    <S.Wrapper>
+    <S.Wrapper role='contentinfo' aria-label='Books list'>
       <Container>
         <S.Content>
           {books.map((book, key) => (

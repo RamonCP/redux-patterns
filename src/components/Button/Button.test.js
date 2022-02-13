@@ -1,9 +1,23 @@
 import 'jest-styled-components'
 
-import { render } from '../../utils/test-utils'
-import { Button } from './Button'
+import { render, waitFor, userEvent, screen } from '../../utils/test-utils'
+import Button from './Button'
 
 describe('<Button />', () => {
+  it('should dispatch function on click', async () => {
+    const mockFunction = jest.fn()
+    render(<Button onClick={mockFunction}>Add to cart</Button>)
+
+    expect(mockFunction).not.toHaveBeenCalledTimes(1)
+
+    const button = screen.getByRole('button', { name: 'Add to cart' })
+    userEvent.click(button)
+
+    await waitFor(() => {
+      expect(mockFunction).toHaveBeenCalledTimes(1)
+    })
+  })
+
   it('should render correctly', () => {
     const { container } = render(<Button />)
 

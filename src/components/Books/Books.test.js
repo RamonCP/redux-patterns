@@ -1,9 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
-import renderer from 'react-test-renderer'
 
-import { screen, render } from '../../utils/test-utils'
+import { screen, render, userEvent, waitFor } from '../../utils/test-utils'
 
 import { AddBook } from '../../redux/actions/cart'
 import Books from './Books'
@@ -16,35 +15,21 @@ describe('<Books />', () => {
       books: booksStore
     })
 
-    const component = renderer.create(
+    const { container } = render(
       <Provider store={store}>
         <Books />
       </Provider>
     )
 
-    return { store, component }
+    return { store, container }
   }
 
   it('should render with initial state', () => {
     renderComponent([])
   })
 
-  it('should dispatch an action on button click', () => {
-    const { store } = renderComponent([])
-
-    store.dispatch(AddBook({}))
-  })
-
   it('should display book title', async () => {
-    render(
-      <Provider
-        store={mockStore({
-          books: [{ volumeInfo: { title: 'Introduction to React' } }]
-        })}
-      >
-        <Books />
-      </Provider>
-    )
+    renderComponent([{ volumeInfo: { title: 'Introduction to React' } }])
 
     expect(screen.getByText('Introduction to React')).toBeInTheDocument()
   })

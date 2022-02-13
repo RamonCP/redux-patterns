@@ -17,7 +17,11 @@ function Home() {
   return (
     <>
       <Navbar />
-      {loading ? <Spinner /> : <Books />}
+      {loading ? (
+        <Spinner role='img' aria-label='spinner loading icon' />
+      ) : (
+        <Books />
+      )}
     </>
   )
 }

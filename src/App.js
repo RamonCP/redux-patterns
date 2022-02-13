@@ -1,6 +1,6 @@
 import { GlobalStyle } from './styles/global'
 import Notify from './components/Notify/Notify'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 
 function App() {
   return (

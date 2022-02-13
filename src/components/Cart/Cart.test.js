@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { render, screen, within } from '../../utils/test-utils'
+import { render, screen } from '../../utils/test-utils'
 import Cart from './Cart'
 import { mock } from './Cart.mock'
 
