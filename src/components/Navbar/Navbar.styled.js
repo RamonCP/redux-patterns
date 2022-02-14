@@ -8,6 +8,7 @@ export const Wrapper = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 30;
 `
 
 export const Content = styled.div`

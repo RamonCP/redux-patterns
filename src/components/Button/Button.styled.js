@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Button = styled.button`
-  ${({ size }) => css`
+  ${({ size, type }) => css`
     background-color: #ff6c00;
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%), inset 0 -2px 0 0 rgb(0 0 0 / 20%);
     color: #fff;
@@ -22,5 +22,12 @@ export const Button = styled.button`
       color: #fff;
       outline: none;
     }
+
+    ${!!type &&
+    type === 'book-list' &&
+    css`
+      position: absolute;
+      bottom: 18px;
+    `}
   `}
 `

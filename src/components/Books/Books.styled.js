@@ -16,7 +16,12 @@ export const Book = styled.div`
   justify-items: center;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 25px 10px;
+  padding: 25px 10px 60px;
+  position: relative;
+
+  a {
+    text-align: center;
+  }
 
   img {
     width: 125px;

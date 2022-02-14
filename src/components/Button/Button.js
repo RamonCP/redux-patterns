@@ -1,7 +1,7 @@
 import * as S from './Button.styled'
 
-const Button = ({ onClick, children, size }) => (
-  <S.Button size={size} onClick={onClick}>
+const Button = ({ onClick, children, size, type }) => (
+  <S.Button size={size} type={type} onClick={onClick}>
     {children}
   </S.Button>
 )

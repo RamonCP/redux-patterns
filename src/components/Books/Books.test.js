@@ -1,10 +1,9 @@
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { screen, render, userEvent, waitFor } from '../../utils/test-utils'
-
-import { AddBook } from '../../redux/actions/cart'
+import { screen, render } from '../../utils/test-utils'
 import Books from './Books'
 
 const mockStore = configureStore([])
@@ -16,9 +15,11 @@ describe('<Books />', () => {
     })
 
     const { container } = render(
-      <Provider store={store}>
-        <Books />
-      </Provider>
+      <HashRouter>
+        <Provider store={store}>
+          <Books />
+        </Provider>
+      </HashRouter>
     )
 
     return { store, container }
@@ -26,10 +27,15 @@ describe('<Books />', () => {
 
   it('should render with initial state', () => {
     renderComponent([])
+
+    const h3 = screen.queryByRole('heading', { level: 3 })
+    expect(h3).not.toBeInTheDocument()
   })
 
   it('should display book title', async () => {
-    renderComponent([{ volumeInfo: { title: 'Introduction to React' } }])
+    renderComponent({
+      items: [{ volumeInfo: { title: 'Introduction to React' } }]
+    })
 
     expect(screen.getByText('Introduction to React')).toBeInTheDocument()
   })

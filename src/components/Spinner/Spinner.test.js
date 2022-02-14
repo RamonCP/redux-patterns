@@ -37,7 +37,9 @@ describe('<Spinner />', () => {
 }
 
 <div
+  aria-label="spinner loading icon"
   class="c0"
+  role="img"
 />
 `)
   })

@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
+  z-index: 20;
 
   svg {
     font-size: 2.2rem;

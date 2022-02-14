@@ -3,12 +3,12 @@ import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
 import { render, screen } from '../../utils/test-utils'
-import Home from './Home'
-import { bookFetch } from '../../redux/actions/books'
+import HomePage from './HomePage'
+import { fetchBooks } from '../../redux/actions/books'
 
 const mockStore = configureStore([])
 
-describe('<Home />', () => {
+describe('<HomePage />', () => {
   const renderComponent = (loading) => {
     const store = mockStore({
       books: [],
@@ -18,7 +18,7 @@ describe('<Home />', () => {
 
     const { container } = render(
       <Provider store={store}>
-        <Home />
+        <HomePage />
       </Provider>
     )
 
@@ -28,7 +28,7 @@ describe('<Home />', () => {
   it('should dispatch a fetch action when initialize', () => {
     const { store } = renderComponent(true)
 
-    store.dispatch(bookFetch())
+    store.dispatch(fetchBooks())
   })
 
   it('should render Spinner when loading is true', () => {
@@ -49,12 +49,5 @@ describe('<Home />', () => {
     })
 
     expect(booksComponent).toBeInTheDocument()
-  })
-
-  it('should render the navbar', () => {
-    renderComponent(true)
-
-    expect(screen.getByText(/books/i)).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: /cart icon/i })).toBeInTheDocument()
   })
 })

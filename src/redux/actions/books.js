@@ -1,15 +1,30 @@
 export const TypesBooks = {
-  BOOK_FETCH: '[BOOKS]: Init Fetch',
+  FETCH_BOOKS: '[BOOKS]: Init Fetch',
+  FETCH_ONE_BOOK: '[BOOKS]: Init Fetch one Book',
+  FETCH_ONE_BOOK_SUCCESS: '[BOOKS]: Fetch one Book Success',
   FETCH_BOOKS_SUCCESS: '[BOOKS]: Fetch Success',
   FETCH_BOOKS_ERROR: '[BOOKS]: Fetch Error',
-  UPDATE_BOOKS: '[BOOKS]: Update'
+  UPDATE_BOOKS: '[BOOKS]: Update',
+  UPDATE_ACTUAL_BOOK: '[BOOKS]: Update Atual Book'
 }
 
-export const bookFetch = () => ({
-  type: TypesBooks.BOOK_FETCH
+export const fetchBooks = () => ({
+  type: TypesBooks.FETCH_BOOKS
 })
 
 export const updateBooks = (payload) => ({
   type: TypesBooks.UPDATE_BOOKS,
   payload
+})
+
+export const updateActualBook = (payload) => ({
+  type: TypesBooks.UPDATE_ACTUAL_BOOK,
+  payload
+})
+
+export const fetchOneBook = (id) => ({
+  type: TypesBooks.FETCH_ONE_BOOK,
+  payload: {
+    id
+  }
 })

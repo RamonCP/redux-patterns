@@ -1,26 +1,41 @@
-import { TypesBooks, updateBooks } from '../actions/books'
+import { TypesBooks, updateBooks, updateActualBook } from '../actions/books'
 import { ApiRequest } from '../actions/api'
 import { showLoading, hideLoading } from '../actions/loading'
 
-const url = 'https://www.googleapis.com/books/v1/volumes?q=react'
+const url = 'https://www.googleapis.com/books/v1/volumes'
 const headers = {
   'Content-type': 'application/json; charset=UTF-8'
 }
 
-export const fetchBooks =
+export const fetchBooksMdl =
   ({ dispatch }) =>
   (next) =>
   (action) => {
     next(action)
 
-    if (action.type === TypesBooks.BOOK_FETCH) {
+    if (action.type === TypesBooks.FETCH_BOOKS) {
       dispatch(
         ApiRequest(
-          url,
+          `${url}?q=react`,
           'GET',
           null,
           headers,
           TypesBooks.FETCH_BOOKS_SUCCESS,
+          TypesBooks.FETCH_BOOKS_ERROR
+        )
+      )
+
+      dispatch(showLoading())
+    }
+
+    if (action.type === TypesBooks.FETCH_ONE_BOOK) {
+      dispatch(
+        ApiRequest(
+          `${url}/${action.payload.id}`,
+          'GET',
+          null,
+          headers,
+          TypesBooks.FETCH_ONE_BOOK_SUCCESS,
           TypesBooks.FETCH_BOOKS_ERROR
         )
       )
@@ -41,6 +56,18 @@ export const fetchSuccess =
     }
   }
 
+export const fetchOneBookSuccess =
+  ({ dispatch }) =>
+  (next) =>
+  (action) => {
+    next(action)
+
+    if (action.type === TypesBooks.FETCH_ONE_BOOK_SUCCESS) {
+      dispatch(updateActualBook(action.payload))
+      dispatch(hideLoading())
+    }
+  }
+
 export const fetchError =
   ({ dispatch }) =>
   (next) =>
@@ -52,5 +79,5 @@ export const fetchError =
     }
   }
 
-const booksMdl = [fetchBooks, fetchSuccess, fetchError]
+const booksMdl = [fetchBooksMdl, fetchSuccess, fetchOneBookSuccess, fetchError]
 export default booksMdl
