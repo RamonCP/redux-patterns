@@ -14,7 +14,9 @@ const BookPage = (props) => {
 
   useEffect(() => {
     const bookId = location.pathname.split('book/')[1]
-    dispatch(fetchOneBook(bookId))
+    dispatch(
+      fetchOneBook(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
+    )
   }, [dispatch, location.pathname])
 
   if (loading) {

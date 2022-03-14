@@ -10,7 +10,7 @@ function HomePage() {
   const loading = useSelector((state) => state.loading)
 
   useEffect(() => {
-    dispatch(fetchBooks())
+    dispatch(fetchBooks('https://www.googleapis.com/books/v1/volumes?q=react'))
   }, [dispatch])
 
   return <>{loading ? <Spinner /> : <Books />}</>

@@ -8,8 +8,11 @@ export const TypesBooks = {
   UPDATE_ACTUAL_BOOK: '[BOOKS]: Update Atual Book'
 }
 
-export const fetchBooks = () => ({
-  type: TypesBooks.FETCH_BOOKS
+export const fetchBooks = (url) => ({
+  type: TypesBooks.FETCH_BOOKS,
+  payload: {
+    url
+  }
 })
 
 export const updateBooks = (payload) => ({
@@ -22,9 +25,9 @@ export const updateActualBook = (payload) => ({
   payload
 })
 
-export const fetchOneBook = (id) => ({
+export const fetchOneBook = (url) => ({
   type: TypesBooks.FETCH_ONE_BOOK,
   payload: {
-    id
+    url
   }
 })
