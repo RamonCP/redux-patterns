@@ -1,4 +1,4 @@
-import { NotifyTypes } from '../actions/notify'
+import { NotifyTypes } from './notify.actions'
 
 const initialState = {
   show: false,

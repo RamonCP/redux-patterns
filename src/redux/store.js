@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleWare from 'redux-saga'
 
-import rootReducers from './reducers'
-import sagas from './sagas'
+import rootReducers from './ducks/rootReducer'
+import rootSagas from './ducks/rootSagas'
 
 const sagaMiddleware = createSagaMiddleWare()
 const middlewares = [sagaMiddleware]
@@ -15,6 +15,6 @@ const store = createStore(
   composeEnhancers(applyMiddleware(...middlewares))
 )
 
-sagaMiddleware.run(sagas)
+sagaMiddleware.run(rootSagas)
 
 export default store

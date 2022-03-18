@@ -1,8 +1,8 @@
 import { call, put } from 'redux-saga/effects'
 
-import { updateBooks, updateActualBook } from '../actions/books'
-import { hideLoading, showLoading } from '../actions/loading'
-import { services } from '../services/api'
+import { updateBooks, updateActualBook } from './books.actions'
+import { hideLoading, showLoading } from '../loading/loading.actions'
+import { services } from '../../services/api'
 
 export function* fetchBooks(action) {
   try {
