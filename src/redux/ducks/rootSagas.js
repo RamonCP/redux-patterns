@@ -1,10 +1,10 @@
 import { takeLatest, all } from 'redux-saga/effects'
 
-import { TypesBooks } from '../actions/books'
-import { fetchBooks, fetchOneBook } from './books'
+import { TypesBooks } from './books/books.actions'
+import { fetchBooks, fetchOneBook } from './books/books.sagas'
 
-import { CartTypes } from '../actions/cart'
-import { onAddToCart } from './cart'
+import { CartTypes } from './cart/cart.actions'
+import { onAddToCart } from './cart/cart.sagas'
 
 export default function* rootSaga() {
   return yield all([

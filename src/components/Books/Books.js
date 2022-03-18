@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { AddBook } from '../../redux/actions/cart'
+import { AddBook } from '../../redux/ducks/cart/cart.actions'
 import Container from '../Container/Container'
 import Button from '../Button/Button'
 import * as S from './Books.styled'

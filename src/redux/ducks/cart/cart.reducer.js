@@ -1,4 +1,4 @@
-import { CartTypes } from '../actions/cart'
+import { CartTypes } from './cart.actions'
 
 const initialState = []
 

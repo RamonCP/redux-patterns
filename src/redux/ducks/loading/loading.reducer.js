@@ -1,4 +1,4 @@
-import { TypesLoading } from '../actions/loading'
+import { TypesLoading } from './loading.actions'
 
 const initialState = false
 

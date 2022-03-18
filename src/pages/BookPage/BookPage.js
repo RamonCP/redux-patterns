@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 
 import * as S from './BookPage.styled'
 import Spinner from '../../components/Spinner/Spinner'
-import { fetchOneBook } from '../../redux/actions/books'
+import { fetchOneBook } from '../../redux/ducks/books/books.actions'
 
 const BookPage = (props) => {
   const book = useSelector((state) => state.books.actual)
