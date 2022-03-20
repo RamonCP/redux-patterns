@@ -2,10 +2,10 @@ import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { screen, render } from '../../utils/test-utils'
+import { screen, render } from 'utils/test-utils'
 import BookPage from './BookPage'
 import { mock } from './mock'
-import { BookType } from '../../redux/ducks/books/books.types'
+import { BookType } from 'redux/ducks/books/books.types'
 
 const mockStore = configureStore([])
 
@@ -60,5 +60,17 @@ describe('<BookPage />', () => {
 
     const img = screen.getByRole('img', { name: 'book image' })
     expect(img).toBeInTheDocument()
+  })
+
+  it('should render book title', () => {
+    const loading = false
+    const actual = mock
+
+    renderComponent(loading, actual)
+
+    const heading = screen.getByRole('heading', {
+      name: /React Aprenda Praticando/i
+    })
+    expect(heading).toBeInTheDocument()
   })
 })

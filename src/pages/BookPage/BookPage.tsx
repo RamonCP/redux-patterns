@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import parse from 'html-react-parser'
 
 import * as S from './BookPage.styled'
-import Spinner from '../../components/Spinner/Spinner'
-import { fetchOneBook } from '../../redux/ducks/books/books.actions'
-import { AplicationState } from '../../redux/store'
+import Spinner from 'components/Spinner/Spinner'
+import Container from 'components/Container/Container'
+import Heading from 'components/Heading/Heading'
+
+import { fetchOneBook } from 'redux/ducks/books/books.actions'
+import { AplicationState } from 'redux/store'
 
 const BookPage = () => {
   const book = useSelector((state: AplicationState) => state.books.actual)
@@ -27,13 +31,27 @@ const BookPage = () => {
   return (
     <>
       {book && (
-        <S.Wrapper>
-          <img
-            src={book.volumeInfo.imageLinks.thumbnail}
-            alt=''
-            aria-label='book image'
-          />
-        </S.Wrapper>
+        <Container>
+          <S.Wrapper>
+            <S.Cover>
+              <img
+                src={book.volumeInfo.imageLinks.small}
+                alt=''
+                aria-label='book image'
+              />
+            </S.Cover>
+            <S.Info>
+              <Heading size='large'>{book.volumeInfo.title}</Heading>
+              <Heading size='medium'>{book.volumeInfo.subtitle}</Heading>
+
+              <div className='description'>
+                {!!book.volumeInfo.description
+                  ? parse(book.volumeInfo.description)
+                  : 'No description'}
+              </div>
+            </S.Info>
+          </S.Wrapper>
+        </Container>
       )}
     </>
   )

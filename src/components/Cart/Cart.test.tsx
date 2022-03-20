@@ -1,14 +1,14 @@
-import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { render, screen } from '../../utils/test-utils'
+import { render, screen } from 'utils/test-utils'
 import Cart from './Cart'
-import { mock, MockTypes } from './Cart.mock'
+import { mock } from './Cart.mock'
+import { CartTypes } from 'redux/ducks/cart/cart.types'
 
 const mockStore = configureStore([])
 
-const MockStore = (mock: MockTypes) => {
+const MockStore = (mock: CartTypes) => {
   const store = mockStore({
     cart: mock
   })
@@ -40,7 +40,7 @@ describe('<Cart />', () => {
   test('should render cart amount and all books on a list when cart.length > 0', () => {
     MockStore(mock)
 
-    const bookTitle = screen.getByText(/React Quickly/i)
+    const bookTitle = screen.getByText(/React Aprenda Praticando/i)
     expect(bookTitle).toBeInTheDocument()
   })
 

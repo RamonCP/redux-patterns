@@ -1,5 +1,3 @@
-import React from 'react'
-
 import SpinnerComponent from './Spinner.styled'
 
 const Spinner = () => (

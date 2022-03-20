@@ -1,6 +1,6 @@
 import 'jest-styled-components'
 
-import { render } from '../../utils/test-utils'
+import { render } from 'utils/test-utils'
 import Container from './Container'
 
 describe('<Container />', () => {

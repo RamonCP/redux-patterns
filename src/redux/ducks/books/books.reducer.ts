@@ -12,12 +12,19 @@ const initialState: BooksType = {
     selfLink: '',
     volumeInfo: {
       title: '',
+      subtitle: '',
       authors: [],
+      publisher: '',
       publishedDate: '',
+      description: '',
       pageCount: 0,
+      categories: [],
       imageLinks: {
         smallThumbnail: '',
-        thumbnail: ''
+        thumbnail: '',
+        small: '',
+        medium: '',
+        large: ''
       }
     }
   }

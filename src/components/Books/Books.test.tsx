@@ -1,9 +1,8 @@
-import React from 'react'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { screen, render } from '../../utils/test-utils'
+import { screen, render } from 'utils/test-utils'
 import Books from './Books'
 
 const mockStore = configureStore([])

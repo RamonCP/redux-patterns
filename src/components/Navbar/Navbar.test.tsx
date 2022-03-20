@@ -1,9 +1,8 @@
-import React from 'react'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
 import configureStore from 'redux-mock-store'
 
-import { screen, render } from '../../utils/test-utils'
+import { screen, render } from 'utils/test-utils'
 import Navbar from './Navbar'
 
 const mockStore = configureStore([])

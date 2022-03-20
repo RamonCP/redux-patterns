@@ -29,7 +29,7 @@ export function* fetchOneBook(action: fetchOneBookActionType) {
       action.payload.url
     )
 
-    yield put(updateActualBook(response.data.items))
+    yield put(updateActualBook(response.data))
     yield put(hideLoading())
   } catch (err) {
     console.error(err)
