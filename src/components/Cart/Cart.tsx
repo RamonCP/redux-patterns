@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { FaShoppingCart } from 'react-icons/fa'
 
-import { AplicationState } from '../../redux/store'
+import { AplicationState } from 'redux/store'
 
 import Overlay from '../Overlay/Overlay'
 import Button from '../Button/Button'

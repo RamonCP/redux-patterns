@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { AplicationState } from '../../redux/store'
-import { BookType } from '../../redux/ducks/books/books.types'
-import { AddBook } from '../../redux/ducks/cart/cart.actions'
+import { AplicationState } from 'redux/store'
+import { BookType } from 'redux/ducks/books/books.types'
+import { AddBook } from 'redux/ducks/cart/cart.actions'
 
 import Container from '../Container/Container'
 import Button from '../Button/Button'

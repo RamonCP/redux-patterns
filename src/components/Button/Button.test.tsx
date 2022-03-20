@@ -1,7 +1,6 @@
-import React from 'react'
 import 'jest-styled-components'
 
-import { render, waitFor, userEvent, screen } from '../../utils/test-utils'
+import { render, waitFor, userEvent, screen } from 'utils/test-utils'
 import Button from './Button'
 
 describe('<Button />', () => {

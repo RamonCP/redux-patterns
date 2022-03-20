@@ -8,31 +8,38 @@ export const BooksTypesAction = {
   UPDATE_ACTUAL_BOOK: '[BOOKS]: Update Atual Book'
 }
 
-export type BookType = {
+export interface BookType {
   kind: string
   id: string
   etag: string
   selfLink: string
   volumeInfo: {
     title: string
+    subtitle?: string
     authors: string[]
+    publisher: string
     publishedDate: string
+    description: string
     pageCount: number
+    categories: string[]
     imageLinks: {
       smallThumbnail: string
       thumbnail: string
+      small: string
+      medium: string
+      large: string
     }
   }
 }
 
-export type BooksType = {
+export interface BooksType {
   kind: string
   totalItems: number
   items: BookType[]
   actual: BookType
 }
 
-export type fetchBooksActionType = {
+export interface fetchBooksActionType {
   type: string
   payload: {
     url: string

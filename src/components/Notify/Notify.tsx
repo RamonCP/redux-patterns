@@ -1,8 +1,7 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 
-import { AplicationState } from '../../redux/store'
+import { AplicationState } from 'redux/store'
 import * as S from './Notify.styled'
 
 const Notify = () => {

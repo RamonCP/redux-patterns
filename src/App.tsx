@@ -1,10 +1,10 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 
-import { GlobalStyle } from './styles/global'
-import Navbar from './components/Navbar/Navbar'
-import Notify from './components/Notify/Notify'
-import HomePage from './pages/HomePage/HomePage'
-import BookPage from './pages/BookPage/BookPage'
+import { GlobalStyle } from 'styles/global'
+import Navbar from 'components/Navbar/Navbar'
+import Notify from 'components/Notify/Notify'
+import HomePage from 'pages/HomePage/HomePage'
+import BookPage from 'pages/BookPage/BookPage'
 
 function App() {
   return (

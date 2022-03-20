@@ -1,4 +1,4 @@
-import { CartTypes } from '../../redux/ducks/cart/cart.types'
+import { CartTypes } from 'redux/ducks/cart/cart.types'
 import * as S from './CartList.styled'
 
 const CartList = ({ cart }: { cart: CartTypes }) => (

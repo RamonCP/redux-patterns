@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { render, screen } from '../../utils/test-utils'
+import { render, screen } from 'utils/test-utils'
 import HomePage from './HomePage'
-import { fetchBooks } from '../../redux/ducks/books/books.actions'
+import { fetchBooks } from 'redux/ducks/books/books.actions'
 
 const mockStore = configureStore([])
 

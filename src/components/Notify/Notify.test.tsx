@@ -1,10 +1,9 @@
-import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
-import { render, screen } from '../../utils/test-utils'
+import { render, screen } from 'utils/test-utils'
 import Notify from './Notify'
-import { NotifyTypes } from '../../redux/ducks/notify/notify.types'
+import { NotifyTypes } from 'redux/ducks/notify/notify.types'
 
 const mockStore = configureStore([])
 
